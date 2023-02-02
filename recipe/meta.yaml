@@ -1,5 +1,5 @@
 {% set name = "blueskyapi" %}
-{% set version = "0.1.4" %}
+{% set version = "0.1.5" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b2235abaa5c979566b98697a8000194452962ed58a82e96fbe68a83b4124e93d
+  sha256: 4f7a33606f25116e701d9dc8a6c087e400647b7ee0e9ee030092172011bcdb1f
 
 build:
   noarch: python
