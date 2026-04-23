@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: d955dc016b25f6b6bca42410b0c16fa77004ab7fbfef1b85d5eaf1710afd6ed2
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7.1
+    - python {{ python_min }}
     - pip
     - poetry-core >=1.0.0
   run:
     - pandas >=1.1,<2.0
-    - python >=3.7.1
+    - python >={{ python_min }}
     - requests >=2.0,<3.0
 
 test:
@@ -29,6 +29,7 @@ test:
     - blueskyapi
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
